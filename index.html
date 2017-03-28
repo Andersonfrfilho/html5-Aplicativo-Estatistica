@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Estas 3 meta tags devem obrigatoriamente ser as primeiras na seção head -->
+		<!-- As demais devem vir depois delas -->
+		<title>Aplicativo Estatistica</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet"> <!-- CSS do Bootstrap -->
+		<link href="css/estilo.css" rel="stylesheet">
+		<!-- Versão compilada e minificada da JavaScript -->
+		
+		<script type="text/javascript" src="js/funcoes.js" charset="UTF-8"></script>
+		<!-- HTML5 shim and Respond.js para suporte dos elementos HTML5 e das media queries ao IE8 -->
+		<!-- Atenção: Respond.js não funciona em páginas carregadas com uso do protocolo file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container-fluid">
+			<header class="container-fluid">
+				<nav class="navbar navbar-default">
+						<div class="navbar-header">
+						<a class="navbar-brand" href="#">Aplicativo Estatistica Aplicada</a>
+						</div>
+					
+				</nav>
+			</header>
+			<main class="container">
+				<form class="form-horizontal"><!--Inicio-Formulario-->
+					<fieldset>
+					<!-- Form Name -->
+						<legend>Numero de Elementos Pesquisados</legend>
+					<!-- Text input-->
+						<form>
+						<div class="row">
+							<div class="col-md-4">
+								<label for="nomePesquisa">Nome da Pesquisa</label>
+								<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+								<input id="nomePesquisa" type="text" class="form-control" name="nomePesquisa" placeholder="Nome da Pesquisa">
+								</div>
+							</div>
+							<div class="col-md-4 col-md-offset-2">
+								<label for="numElementos">Numeros de Elementos Pesquisados</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-option-vertical"></i></span>
+								<input id="numerodeElementos" type="number" class="form-control" name="numElementos" placeholder="Nº de Elementos">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<label for="nomeElementos">Nome dos Elementos(xi)</label>
+								<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+								<input id="nomeElementos" type="text" class="form-control" name="nomeElementos" placeholder="Nome dos Elementos">
+								</div>
+							</div>
+							<div class="col-md-3 col-md-offset-3">
+								<label for="nomeFrequencia">Nome da Frequencia(fi)</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-tags"></i></span>
+								<input id="nomeFrequencia" type="text" class="form-control" name="nomeFrequencia" placeholder="Nome das Frequencia">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+							<legend>Tipo de Tabela</legend>
+								<div class="radio-inline" id="tipoDeTabela">
+									<label><input type="radio" name="tTabela1" id="qualitativa" value="qualitativa" onclick="tipoTabela2('tipoTabela')">Qualitativa</label>
+								</div>
+								<div class="radio-inline">
+								  <label><input type="radio" name="tTabela1" id="quantitativa" value="quantitativa" onclick="tipoTabela('tipoTabela')">Quantitativa</label>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12" id="tipoTabela">
+								
+							</div>
+						</div>
+						<div class="row" id="numeroElementos">
+							<!--<legend>Elementos </legend>
+							<div class="row">
+								<div class="col-md-4 form-inline">
+									<label for="numElementos">Numero de Elementos:
+										<input type="number" class="form-control" id="numerodeElementos">
+									</label>
+								</div>-->
+						</div>
+						<div class="row">
+							<div class="col-md-12">			 <!--"criarElementosDiscretos('numerodeElementos','inputElementos','nomePesquisa','nomeElementos','nomeFrequencia')"-->
+								<button type="button" class="btn btn-primary" onclick="principal('qualitativa','discreta','nomePesquisa','numerodeElementos','nomeElementos','nomeFrequencia','inputElementos')"><span class="glyphicon glyphicon-ok"></span> Prosseguir</button>
+							</div>
+						</div>
+						</form>
+					</fieldset>
+				</form><!--Fim-Formulario-->
+				<!--//////////////////////////////////////////////////////////////////////////////////////////////////-->
+				<form class="form-vertical" id="inputElementos"><!--Inicio-Formulario-->
+					<!--<fieldset>
+						<legend>elementos e pesquisas</legend>
+							<div class="row">
+								<div class="col-xs-2 col-md-2 pull-left">
+								<label>Classe</label>
+								</div>
+								<div class="col-xs-2 col-md-2 pull-left">
+								<label for="ex1">inferior</label>
+								<input class="form-control" id="ex1" type="text">
+								</div>
+								<div class="col-xs-2 col-md-2 pull-left">
+								<label>Até</label>
+								</div>
+								<div class="col-xs-2 pull-left">
+								<label for="ex1">posterior</label>
+								<input class="form-control" id="ex1" type="text">
+								</div>
+								<div class="col-xs-2">
+								<label for="ex1">Elemento</label>
+								<input class="form-control" id="ex1" type="text">
+								</div>
+								<div class="col-xs-2">
+								<label for="ex1">frequencia</label>
+								<input class="form-control" id="ex1" type="text">
+								</div>
+								
+							</div>
+					</fieldset>-->
+				</form><!--Fim-Formulario-->
+				<!--///////////////////////////////////////////////////////////////////////////////////////////////////-->
+				<!--Organizando Dados-->
+				<div class="row" id="organizacaoDados">
+					<!--<fieldset>
+						<legend> 2ª Etapa Organização de dados</legend>
+						<div class="col-md-12">
+							
+						</div>
+					</fieldset>-->	
+				</div>
+				<!--//////////////////////////////////////////////////////////////////////////////////////////////////-->
+				<div class="row" id="tabela">	
+					<!--<fieldset>
+					   <table class="table table-striped" id="tabela">
+						<legend>Estoque de frutas</legend>
+						<thead>
+							<tr>
+								<th scope="col">Elementos</th>
+								<th scope="col">Frequencia</th>
+								<th scope="col">Frequencia(%)</th>
+								<th scope="col">Preço/caixa<br>(R$)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Abacaxi</td>
+								<td>270</td>
+								<td>125,90</td>
+							</tr>
+							
+						</tbody>
+						<tfoot>
+						</tfoot>	
+					  </table>
+					</fieldset>-->
+				</div>	
+				<div class="row-fluid" id="medias">
+					<!--<fieldset>
+						<legend> Medias </legend>
+						<div class="col-md-3">
+							<h2 id="media">Media:</h2>
+						</div>
+						
+						<div class="col-md-3">
+							<h2 id="moda">Moda:</h2>
+						</div>
+						
+						<div class="col-md-3">
+							<h2 id="mediana">Mediana:</h2>
+						</div>
+					</fieldset>-->
+				</div>
+			</main>
+			<footer class="container-fluid" id="rodape">
+			<!--	<legend>Turma de Projeto</legend>
+				<div class="panel panel-default row">
+					<div class="thumbnail col-md-2 img-circle">
+						<img src="img/anderson.jpg" alt="Imagem como Thumbnail" class="img-circle">
+						<div class="caption">
+							<p><strong>Programador/Desenvolvedor:</strong><br>Anderson Fernandes</p>
+						</div>
+					</div>
+					<div class="thumbnail col-md-2 img-circle">
+						<img src="img/cas.jpg" alt="Imagem como Thumbnail" class="img-circle">
+						<div class="caption">
+							<p><strong>Programador:</strong><br>Caio Mijoler</p>
+						</div>
+					</div>
+					<div class="thumbnail col-md-2 img-circle">
+						<img src="img/izamara.jpg" alt="Imagem como Thumbnail" class="img-circle">
+						<div class="caption">
+							<p><strong>Engenharia de Software:</strong><br>Izamara Jordão</p>
+						</div>
+					</div>
+					<div class="thumbnail col-md-2 img-circle">
+						<img src="img/gabi.jpg" alt="Imagem como Thumbnail" class="img-circle">
+						<div class="caption">
+							<p><strong>Gerente de Projetos:</strong><br>Gabriela Gimenes</p>
+						</div>
+					</div>
+					<div class="thumbnail col-md-2 img-circle">
+						<img src="img/profs.jpg" alt="Imagem como Thumbnail" class="img-circle">
+						<div class="caption">
+							<p><strong>Docente Responsavel:</strong><br>Gabriela Gimenes</p>
+						</div>
+					</div>
+				</div>
+					<div class="row">	
+					<div class="thumbnail col-md-12">
+						<img src="img/grupot.jpg" alt="Imagem como Thumbnail" class="img-rounded">
+						<div class="caption">
+							<h2 class="text-center">Grupo desenvolvimento:<br>Trombadinha's Soluction</h2>
+						</div>
+					</div>
+					<div class="panel-footer col-md-12 text-center">
+						<p>&copy; 2017 Trombadinha's Soluctions</p>
+
+					</div>
+				</div>-->
+			</footer>
+		</div><!--Fim Container-->
+		
+		
+		
+		
+		
+		
+
+		
+		<!-- jQuery (caso se use plugins JavaScript do Bootstrap) -->
+		
+		<script type="text/javascript"> // fallback para jQuery
+		//<![CDATA[
+		(window.jQuery)||document.write('<script type="text/javascript" src="js/jquery.min.js"><\/script>');//]]>
+		</script>
+		<!-- Bootstrap -->
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+	</body>
+</html>

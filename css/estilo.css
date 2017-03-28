@@ -1,0 +1,26 @@
+body {
+	margin: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333;
+	background-color: #fff;
+}
+label{
+	margin-left:20px;
+}
+.row-fluid div[class^="col-"] {
+	background: #fafafa;
+	border:1px solid #ccc;
+	margin-bottom:20px;
+	margin-left:20px;
+}
+.row div[class^="col-"]{
+	margin-bottom:20px;
+}
+.row {
+	background-color:#fafafa;
+}
+.thumbnail{
+	margin-left: 40px;
+}

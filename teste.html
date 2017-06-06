@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<style type="text/css">
+
+		</style>
+	</head>
+	<body>
+<script src="javascript/highcharts.js"></script>
+<script src="javascript/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+
+		<script type="text/javascript">
+var vetorX=[];
+var vetorY=[];
+var vetorXY=[];
+var vetoraux=[];
+var vetorPontos=[];
+var aux=[];
+var aux1,aux2,aux3,aux4;
+vetorX = [1,2,3,4,5,6,7,8,9];
+vetorY = [5,12,16,22,34,38,41,45,50];
+for(var i=0;i<vetorX.length;i++){
+  vetorXY[i] = [vetorX[i],vetorY[i]];
+  aux[i] = 0.47+5.75*vetorX[i];
+  vetorPontos[i] = [vetorX[i],aux[i]];
+}
+aux1= vetorX[0];
+aux2= vetorPontos[0];
+aux3 = vetorX[vetorX.length-1];
+aux4 = vetorPontos[vetorPontos.length-1];
+console.log('------------------------------------');
+console.log(vetorX);
+console.log(vetorY);
+console.log('------------------------------------');
+console.log(vetorXY);
+console.log('------------------------------------');
+Highcharts.chart('container', {
+    xAxis: {
+      //===========Minimo e maximo de x
+        min: vetorX[0]-1,
+        max: vetorX[vetorY.length-1]+1
+    },
+    //============minimo e maximo de y
+    yAxis: {
+        min: 0
+    },
+    title: {
+      //============Titulo Grafico
+        text: 'Scatter plot with regression line'
+    },
+    series: [{
+        type: 'line',
+        name: 'Regression Line',
+        //=================POnto minimo e o ponto maximo [xInicio,f(xInicio)],[xFinal,f(xFinal)]=======
+        data: [[vetorX[0], aux[0]], [vetorX[vetorX.length-1], aux[aux.length-1]]],
+        marker: {
+            enabled: false
+        },
+        states: {
+            hover: {
+                lineWidth: 0
+            }
+        },
+        enableMouseTracking: false
+    }, {
+        type: 'scatter',
+        name: 'Observations',
+        //===================vetor de valores da funcao=======\\
+        data: vetorPontos,
+        marker: {
+            radius: 4
+        }
+    }]
+});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+  <title>Estatistica Aplicada</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+  <script src="javascript/funcoes.js"></script>
+  <script src="javascript/distribuicaoNormal.js"></script>
+  <script src="javascript/tabelaNormal.js"></script>
+  <link rel="stylesheet" href="css/estilo.css">
+  
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="#">Logo</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li id="navindex"><a href="index.html">Home</a></li>
+            <li id="navestatistica"><a href="estatistica.html">Estatistica</a></li>
+            <li id="navintervaloConfianca"><a href="intervaloConfianca.html">Intervalo de Confiança</a></li>
+            <li id="navdistribuicaoNormal"><a href="distribuicaoNormal.html">Distribuição Normal</a></li>  
+            <li id="navbinomial"><a href="binomial.html">Distribuição Binomial</a></li>
+            <li id="navpoisson"><a href="poisson.html">Probabilidade Poison</a></li>
+            <li id="navdistribuicaoUniforme"><a href="distribuicaoUniforme.html">Distribuição Uniforme</a></li>
+            <li id="navcorrelacao"><a href="correlacao.html">Correlação</a></li>
+            <li id="navsobre"><a href="sobre.html">Sobre</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      
+    <div class="container-fluid text-center">    
+      <div class="row content">
+        <div class="col-sm-2 sidenav">
+          <!--<p><a href="#">Link</a></p>
+          <p><a href="#">Link</a></p>
+          <p><a href="#">Link</a></p>-->
+        </div>
+        <div class="col-sm-8 text-left"> 
+          <h1 class="text-center">Distribuição Normal <span class="glyphicon glyphicon-signal"></span></h1>
+          <div class="row-fluid">
+              <form class="form-horizontal">
+                <fieldset>
+                <!-- Form Name -->
+                <legend>Formulario de Distribuição Normal</legend>
+                <!-- Prepended text-->
+                  <div class="form-group">
+                    <div class="col-md-4">
+                      <label for="valorPesquisaDistribuicaoNormal"><b>Valor de Pesquisa (n)</b></label>
+                        <div class="input-group">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                        <input id="valorPesquisaDistribuicaoNormal" type="number" class="form-control" name="ValordaPesquisa" placeholder="Valor para Pesquisa">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="mediaDistribuicaoNormal"><b>Media (x&#773)</b></label>
+                      <div class="input-group">
+                        <span class="input-group-addon"><b>x&#773</b></span>
+                        <input id="mediaDistribuicaoNormal" type="number" class="form-control" name="mediaDistribuicaoNormal" placeholder="Media (x&#773)">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="desvioPadraoDistribuicaoNormal"><b>Desvio Padrão (&#x03ED)</b></label>
+                      <div class="input-group">
+                        <span class="input-group-addon"><b>&#x03ED</b></span>
+                        <input id="desvioPadraoDistribuicaoNormal" type="number" class="form-control" name="numElementos" placeholder="Desvio Padrão (&#x03ED)">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <legend>Tipo de Caso</legend>
+                        <div class="radio-group" id="tipoDeCaso">
+                          <label><input type="radio" name="TCasos" id="caso1" value="caso1">Entre (n) e a Média(x&#773)</label>
+                        </div>
+                        <div class="radio-group">
+                          <label><input type="radio" name="TCasos" id="caso2" value="caso2">Maior ou Menor que Inclui a Média(x&#773)</label>
+                        </div>
+                        <div class="radio-group">
+                          <label><input type="radio" name="TCasos" id="caso3" value="caso3">Maior ou Menor que Exclui a Média(x&#773)</label>
+                        </div>
+                        <div class="radio-group">
+                          <label><input type="radio" name="TCasos" id="caso4" value="caso4">Entre 2 valores que Inclui a Média(x&#773)</label>
+                        </div>
+                        <div class="radio-group">
+                          <label><input type="radio" name="TCasos" id="caso5" value="caso5">Entre 2 Valores que Exclui a Média(x&#773)</label>
+                        </div>  
+                    </div>
+                    <div id="segundoValor">  
+                      <!--<div class="col-md-4">
+                        <legend></legend>
+                        <label for="valorPesquisaDistribuicaoNormal"><b>Segundo Valor de Pesquisa (n)</b></label>
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                          <input id="valorPesquisaDistribuicaoNormal2" type="number" class="form-control" name="ValordaPesquisa2" placeholder="2º Valor para Pesquisa">
+                        </div>
+                      </div>-->
+                     </div> 
+                    
+                  </div>
+                </fieldset>
+              </form>
+              <div id="botaoDN">
+                <!--<div class="row-fluid">
+                      <button type="button" class="btn btn-default" id="btnDistribuicaoNormal"><i class="glyphicon glyphicon-ok-sign"></i> Resolver</button> 
+                </div>-->
+              </div>  
+            </div>
+            <div class="row-fluid" id="resultadoDistribuicaoNormal">
+              <!--<fieldset>
+                <legend class="text-center">Resultado</legend>
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <b><h2>asfvrs</h2></b>
+              </div>
+              <div class="col-md-4"></div>
+              </fieldset>-->  
+            </div>
+            <div id="botaoReset">
+
+            </div>  
+        </div>
+        <div class="col-sm-2 sidenav">
+          <!--<div class="well">
+            <p>ADS</p>
+          </div>
+          <div class="well">
+            <p>ADS</p>
+          </div>-->
+        </div>
+      </div>
+    </div><!--Container-->
+
+    <footer class="container-fluid text-center">
+      <p>Rodape</p>
+    </footer>
+
+  </body>
+</html>
